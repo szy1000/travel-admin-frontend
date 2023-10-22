@@ -25,6 +25,29 @@ export default defineConfig({
       component: './Access',
     },
     {
+      name: '房间',
+      path: '/house',
+      // component: './House/Add',
+      routes: [
+        {
+          name: '房间列表',
+          path: '/house/list',
+          component: './House/List',
+        },
+        {
+          name: '新增房间',
+          path: '/house/add',
+          component: './House/Add',
+        },
+        {
+          name: '更新房间',
+          hideInMenu: true,
+          path: '/house/update/:id',
+          component: './House/Add',
+        }
+      ]
+    },
+    {
       name: ' CRUD 示例',
       path: '/table',
       component: './Table',
