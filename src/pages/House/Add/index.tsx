@@ -11,7 +11,7 @@ const HouseAdd = (props) => {
 
   return (
     <PageContainer ghost>
-      HouseAdd
+      HouseList
     </PageContainer>
   );
 };
