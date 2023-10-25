@@ -1,8 +1,8 @@
-import {queryTableDataReq} from './service'
+import {queryTableDataReq, submitHouseFormReq} from './service'
 export default {
   namespace: 'HouseList',
   state: {
-
+    init: false
   },
   effects: {
     *pageInit({params}, {call, put}) {
@@ -13,6 +13,11 @@ export default {
           ...res
         }
       })
+    },
+    *submitForm({params}, {call,put}) {
+      const res = yield call(submitHouseFormReq, params)
+      console.log(res)
+
 
     }
   },

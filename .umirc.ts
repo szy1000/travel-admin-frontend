@@ -3,9 +3,18 @@ import { defineConfig } from '@umijs/max';
 export default defineConfig({
   antd: {},
   access: {},
-  model: {},
   initialState: {},
+  model: {},
+  dva: {},
   request: {},
+  proxy: {
+    '/api': {
+      target: 'http://127.0.0.1:7001',
+      // target: 'https://travel.shenzhiyong.com.cn',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '/api' },
+    }
+  },
   layout: {
     title: '@umijs/max',
   },

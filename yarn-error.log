@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/shenzhiyong/.nvm/versions/node/v18.15.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js add umi
+
+PATH: 
+  /Users/shenzhiyong/.rbenv/shims:/Users/shenzhiyong/.rbenv/shims:/Users/shenzhiyong/Library/pnpm:/Users/shenzhiyong/.nvm/versions/node/v18.15.0/bin:/Users/shenzhiyong/development/flutter/bin:/usr/local/maven/apache-maven-3.6.3/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/go/bin:/Users/shenzhiyong/Desktop/travel-admin-frontend/node_modules/.bin:/Users/shenzhiyong/Library/Android/sdk/emulator:/Users/shenzhiyong/Library/Android/sdk/tools:/Users/shenzhiyong/Library/Android/sdk/tools/bin:/Users/shenzhiyong/Library/Android/sdk/platform-tools:/usr/local/mysql/bin/:/Users/shenzhiyong/Library/Android/sdk/emulator:/Users/shenzhiyong/Library/Android/sdk/tools:/Users/shenzhiyong/Library/Android/sdk/tools/bin:/Users/shenzhiyong/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/shenzhiyong/Library/Caches/Yarn/v6/npm-globals-13.23.0-ef31673c926a0976e1f61dab4dca57e0c0a8af02-integrity/node_modules/globals/globals.json' -> '/Users/shenzhiyong/Desktop/travel-admin-frontend/node_modules/@eslint/eslintrc/node_modules/globals/globals.json'
+
+npm manifest: 
+  {
+    "private": true,
+    "author": "szy1000 <1538078053@qq.com>",
+    "scripts": {
+      "dev": "max dev",
+      "build": "max build",
+      "format": "prettier --cache --write .",
+      "prepare": "husky install",
+      "postinstall": "max setup",
+      "setup": "max setup",
+      "start": "npm run dev"
+    },
+    "dependencies": {
+      "@ant-design/icons": "^5.2.6",
+      "@ant-design/pro-components": "^2.6.30",
+      "@umijs/max": "^4.0.86",
+      "antd": "^5.10.1"
+    },
+    "devDependencies": {
+      "@types/react": "^18.2.28",
+      "@types/react-dom": "^18.2.13",
+      "husky": "^8.0.3",
+      "lint-staged": "^15.0.1",
+      "prettier": "^3.0.3",
+      "prettier-plugin-organize-imports": "^3.2.3",
+      "prettier-plugin-packagejson": "^2.4.6",
+      "typescript": "^5.2.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
