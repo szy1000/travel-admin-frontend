@@ -1,16 +1,30 @@
 import {ProTable, PageContainer} from '@ant-design/pro-components';
-import {Button, Modal, Form, Input, Upload} from "antd";
+import {Button, message, Modal, Form, Input, Upload} from "antd";
 import ImgCrop from 'antd-img-crop';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {connect} from "@umijs/max";
 
 const HouseList = (props) => {
-  const {updateLoading} = props
+  const {updateLoading, dispatch} = props
   const [visible, setVisible] = useState(false)
   const [form] = Form.useForm()
+  const [fileList, setFileList] = useState([])
   const columns = [
     {
       title: '房间名字',
+      dataIndex: 'name'
+    },
+    {
+      title: '价格',
+      dataIndex: 'price'
+    },
+    {
+      title: '简介',
+      dataIndex: 'info'
+    },
+    {
+      title: '详细地址',
+      dataIndex: 'address'
     }
   ]
 
@@ -21,6 +35,24 @@ const HouseList = (props) => {
     }
   }
 
+  const onChange = ({file, fileList}) => {
+    if (file.status !== 'uploading') {
+      console.log(file, fileList.fileList);
+    }
+    if (file.status === 'done') {
+      message.success(`${file.name} file uploaded successfully`);
+    } else if (file.status === 'error') {
+      message.error(`${file.name} file upload failed.`);
+    }
+    setFileList(fileList)
+
+  }
+
+  useEffect(() => {
+    dispatch({
+      type: 'HouseList/pageInit'
+    })
+  }, [])
   return (
     <PageContainer
       ghost
@@ -30,6 +62,13 @@ const HouseList = (props) => {
     >
       <ProTable
         columns={columns}
+        // request={params => {}}
+        request={async (params) => {
+          return dispatch({
+            type: 'HouseList/pageInit',
+            params,
+          })
+        }}
       />
       <Modal
         open={visible}
@@ -42,7 +81,18 @@ const HouseList = (props) => {
         >
           <Form.Item label='房间名称' name='avatar'>
             <ImgCrop>
-              <Upload>
+              <Upload
+                action="/api/v1/uploads"
+                listType="picture-card"
+                name='file'
+                accept="image/*"
+                // listType="picture-card"
+                headers={{
+                  token: localStorage.getItem('token')
+                }}
+                fileList={fileList}
+                onChange={onChange}
+              >
                 <Button>Add image</Button>
               </Upload>
             </ImgCrop>

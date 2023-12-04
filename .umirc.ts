@@ -18,10 +18,17 @@ export default defineConfig({
   layout: {
     title: '@umijs/max',
   },
+
   routes: [
     {
       path: '/',
       redirect: '/home',
+    },
+    {
+      name: '登录',
+      path: '/login',
+      component: './Login',
+      layout: false,
     },
     {
       name: '首页',

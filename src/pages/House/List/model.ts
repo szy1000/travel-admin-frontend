@@ -13,6 +13,9 @@ export default {
           ...res
         }
       })
+      return {
+        ...res
+      }
     },
     *submitForm({params}, {call,put}) {
       const res = yield call(submitHouseFormReq, params)

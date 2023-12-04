@@ -2,7 +2,7 @@
   "private": true,
   "author": "szy1000 <1538078053@qq.com>",
   "scripts": {
-    "dev": "max dev",
+    "dev": "PORT=4000 max dev",
     "build": "max build",
     "format": "prettier --cache --write .",
     "prepare": "husky install",
